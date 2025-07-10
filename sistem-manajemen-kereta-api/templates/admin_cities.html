@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/admin" class="nav-back">← Kembali ke Admin Panel</a>
+        
+        <div class="header">
+            <h1>🏙️ {{.Title}}</h1>
+            <p class="subtitle">{{.Description}}</p>
+        </div>
+
+        <div class="form-section">
+            <h2>Tambah Kota Baru</h2>
+            <form method="POST">
+                <div class="form-group">
+                    <label class="form-label">Nama Kota</label>
+                    <input type="text" name="city_name" class="form-input" required placeholder="Masukkan nama kota...">
+                </div>
+                <button type="submit" class="btn btn-success">Tambah Kota</button>
+            </form>
+        </div>
+
+        <div class="grid grid-3">
+            {{range .Data}}
+            <div class="card">
+                <div class="card-header">
+                    <div class="flex-between">
+                        <div class="icon">🏙️</div>
+                        <div class="flex gap-10">
+                            <button class="btn btn-outline" style="padding: 5px 10px; font-size: 0.8rem;">Edit</button>
+                            <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;" onclick="return confirm('Yakin ingin menghapus kota ini?')">Hapus</button>
+                        </div>
+                    </div>
+                    <h3 class="card-title">{{.Name}}</h3>
+                    <p class="card-description">ID: {{.ID}}</p>
+                </div>
+            </div>
+            {{end}}
+        </div>
+
+        {{if not .Data}}
+        <div class="empty-state">
+            <div class="icon">🏙️</div>
+            <h3>Belum Ada Kota</h3>
+            <p>Mulai dengan menambahkan kota pertama</p>
+        </div>
+        {{end}}
+    </div>
+</body>
+</html>

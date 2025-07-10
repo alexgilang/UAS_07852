@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Kereta API</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-back {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .nav-back:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .stat-number {
+            color: #2c3e50;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: rgba(52, 152, 219, 0.3);
+        }
+
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .card-title {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .card-description {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #2980b9, #3498db);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="nav-back">← Kembali ke Beranda</a>
+        
+        <div class="header">
+            <h1>👨‍💼 Admin Panel</h1>
+            <p class="subtitle">Kelola seluruh sistem manajemen kereta api</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Total Kota</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">45</div>
+                <div class="stat-label">Total Stasiun</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">28</div>
+                <div class="stat-label">Total Rute</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">156</div>
+                <div class="stat-label">Total Jadwal</div>
+            </div>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card">
+                <div class="card-header text-center">
+                    <div class="icon">🏙️</div>
+                    <h3 class="card-title">Kelola Kota</h3>
+                    <p class="card-description">Tambah, edit, dan hapus data kota-kota yang dilayani kereta api</p>
+                </div>
+                <div class="text-center">
+                    <a href="/admin/cities" class="btn">Kelola Kota</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header text-center">
+                    <div class="icon">🚉</div>
+                    <h3 class="card-title">Kelola Stasiun</h3>
+                    <p class="card-description">Manajemen data stasiun kereta api beserta informasi kontak</p>
+                </div>
+                <div class="text-center">
+                    <a href="/admin/stations" class="btn">Kelola Stasiun</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header text-center">
+                    <div class="icon">🛤️</div>
+                    <h3 class="card-title">Kelola Rute</h3>
+                    <p class="card-description">Atur rute perjalanan kereta api antar kota</p>
+                </div>
+                <div class="text-center">
+                    <a href="/admin/routes" class="btn">Kelola Rute</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header text-center">
+                    <div class="icon">⏰</div>
+                    <h3 class="card-title">Kelola Jadwal</h3>
+                    <p class="card-description">Tentukan jadwal keberangkatan dan kedatangan kereta</p>
+                </div>
+                <div class="text-center">
+                    <a href="/admin/schedules" class="btn">Kelola Jadwal</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header text-center">
+                    <div class="icon">💰</div>
+                    <h3 class="card-title">Kelola Harga</h3>
+                    <p class="card-description">Atur harga tiket untuk setiap rute dan jadwal</p>
+                </div>
+                <div class="text-center">
+                    <a href="/admin/prices" class="btn">Kelola Harga</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

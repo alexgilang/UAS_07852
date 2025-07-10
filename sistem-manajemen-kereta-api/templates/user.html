@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Panel - Kereta API</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="nav-back">← Kembali ke Beranda</a>
+        
+        <div class="header">
+            <h1>👤 User Panel</h1>
+            <p class="subtitle">Layanan informasi dan pemesanan tiket kereta api</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">45</div>
+                <div class="stat-label">Stasiun Aktif</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">28</div>
+                <div class="stat-label">Rute Tersedia</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">156</div>
+                <div class="stat-label">Jadwal Harian</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Layanan Online</div>
+            </div>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card">
+                <div class="card-header text-center">
+                    <div class="icon">🚉</div>
+                    <h3 class="card-title">Lihat Stasiun</h3>
+                    <p class="card-description">Temukan informasi lengkap tentang stasiun kereta api</p>
+                    <ul style="text-align: left; margin: 15px 0; color: #7f8c8d;">
+                        <li>✓ Daftar semua stasiun</li>
+                        <li>✓ Alamat dan lokasi</li>
+                        <li>✓ Informasi kontak</li>
+                        <li>✓ Fasilitas stasiun</li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <a href="/user/stations" class="btn">Lihat Stasiun</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header text-center">
+                    <div class="icon">🛤️</div>
+                    <h3 class="card-title">Rute & Jadwal</h3>
+                    <p class="card-description">Cek rute perjalanan dan jadwal kereta api terkini</p>
+                    <ul style="text-align: left; margin: 15px 0; color: #7f8c8d;">
+                        <li>✓ Rute antar kota</li>
+                        <li>✓ Jadwal keberangkatan</li>
+                        <li>✓ Waktu perjalanan</li>
+                        <li>✓ Harga tiket</li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <a href="/user/routes" class="btn">Lihat Rute</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header text-center">
+                    <div class="icon">🎫</div>
+                    <h3 class="card-title">Pesan Tiket</h3>
+                    <p class="card-description">Pesan tiket kereta api dengan mudah dan cepat</p>
+                    <ul style="text-align: left; margin: 15px 0; color: #7f8c8d;">
+                        <li>✓ Pemesanan online</li>
+                        <li>✓ Pilih jadwal</li>
+                        <li>✓ Konfirmasi instan</li>
+                        <li>✓ E-ticket digital</li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <a href="/user/booking" class="btn btn-success">Pesan Tiket</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Routes Section -->
+        <div class="card mt-30">
+            <div class="card-header">
+                <h3 class="card-title">⭐ Rute Populer</h3>
+                <p class="card-description">Rute yang paling banyak diminati penumpang</p>
+            </div>
+            <div class="grid grid-3">
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 10px;">
+                    <h4 style="color: #2c3e50; margin-bottom: 5px;">Jakarta → Bandung</h4>
+                    <p style="color: #7f8c8d; font-size: 0.9rem;">Durasi: 3 jam | Rp 100.000</p>
+                </div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 10px;">
+                    <h4 style="color: #2c3e50; margin-bottom: 5px;">Jakarta → Surabaya</h4>
+                    <p style="color: #7f8c8d; font-size: 0.9rem;">Durasi: 12 jam | Rp 350.000</p>
+                </div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 10px;">
+                    <h4 style="color: #2c3e50; margin-bottom: 5px;">Bandung → Yogyakarta</h4>
+                    <p style="color: #7f8c8d; font-size: 0.9rem;">Durasi: 8 jam | Rp 200.000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
